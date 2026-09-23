@@ -1,34 +1,43 @@
-export class Venta {
-    id: number;
-    nom: string;
-    preu: number;
-    disponible: boolean;
-    descripcio?: string;
+import { Venta } from './interfaces/noutema';
 
+// PART C: cistella de vendes relacionada amb el model.
+export class CistellaVendes {
+  nom: string;
+  private ventes: Venta[];
 
-    constructor(id: number, nom: string, preu: number, disponible: boolean){
-        this.id = id;
-        this.nom = nom;
-        this.preu = preu;
-        this.disponible = disponible;
+  constructor(nom: string, ventes: Venta[] = []) {
+    this.nom = nom;
+    this.ventes = [...ventes];
+  }
+
+  afegirVenda(venta: Venta): void {
+    this.ventes.push(venta);
+  }
+
+  eliminarVenda(id: number): boolean {
+    const index = this.ventes.findIndex((venta) => venta.id === id);
+
+    if (index === -1) {
+      return false;
     }
 
-    //mètode normal
-    getActius(): boolean {
-        return this.disponible = true;
-    }
+    this.ventes.splice(index, 1);
+    return true;
+  }
 
-    findById(id: number): number {
-        return this.id;
-    }
+  buscarVenda(id: number): Venta | undefined {
+    return this.ventes.find((venta) => venta.id === id);
+  }
 
-    formatarElement(nom: string): string{
-        return this.descripcio = `El producte ${this.nom} té un preu de ${this.preu}€`;
-    }
+  get total(): number {
+    return this.ventes.reduce(
+      (total, venta) => total + this.preuAmbIva(venta.preu),
+      0,
+    );
+  }
 
-    getDescripcio(nom: string): string {
-        return `${this.descripcio}`;
-    }
-
-
+  // Funció auxiliar privada.
+  private preuAmbIva(preu: number): number {
+    return preu * 1.21;
+  }
 }
