@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Producte } from './interfaces/producte'; //PER PODER USAR LA iterface DE TIPUS Producte s'ha d'importar
-import {Producte as ProducteClass} from './producte'; //Importem la classe Producte assignant un alias. 
-
+import {Producte as ProducteClass} from './producte'; //Importem la classe Producte assignant un alias.
+import {Venta} from './interfaces/noutema'; //Importem la classe Producte assignant un alias.
+import {Venta as noutema} from './noutema';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -69,18 +70,27 @@ export class App {
     p1 = new ProducteClass('Teclat', 89.99);
     p2 = new ProducteClass('Ratolí', 49.99);
 
-    constructor() {
-    console.log(this.p1.toString());
-    console.log(this.p1.preuAmbIva());
-    console.log(this.p1.toString());
-    console.log(this.p2.descompte());
-    }
-
     
     
     //1. AFEGIU UN METODE A LA CLASSE PRODUCTE descripcio() que retorni un string amb nom i preu.
     //2. METODE descompte que retorni el preu amb un 10% de rebaixa.
     //3. Creeu un nou producte i mostreu el descompte per consola.
     //4. Cerqueu la manera de mostrar el desconmpte amb un pop.
+
+
+    //PART B
+    
+
+
+    noutema: noutema[] = [];
+
+
+      constructor() {
+      console.log(this.p1.toString());
+      console.log(this.p1.preuAmbIva());
+      console.log(this.p1.toString());
+      console.log(this.p2.descompte)
+      console.log(this.noutema[0].getActius());
+    }
 
 }
