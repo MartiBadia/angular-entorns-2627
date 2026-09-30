@@ -6,9 +6,12 @@ import { Venta } from './interfaces/noutema';
 import { CistellaVendes } from './noutema';
 import { saludar, esMajorEdat, sumarArray } from './funcions';
 import { Alumne } from './alumne';
+import { Tarjeta } from './components/tarjeta/tarjeta';
+import { Perfil } from './components/perfil/perfil';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Tarjeta, Perfil],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -53,7 +56,7 @@ export class App {
 
     //objecte de tipus Producte
 
-    producte: Producte = {
+    /*producte: Producte = {
       id: 1, 
       nom : 'PC', 
       preu : 999,
@@ -70,7 +73,7 @@ export class App {
     productes: Producte[] = [this.producte, this.producte2];
 
     p1 = new ProducteClass('Teclat', 89.99);
-    p2 = new ProducteClass('Ratolí', 49.99);
+    p2 = new ProducteClass('Ratolí', 49.99);*/
 
     
     
@@ -134,9 +137,9 @@ export class App {
     }
 
     constructor() {
-      console.log(this.p1.toString());
+      /*console.log(this.p1.toString());
       console.log(this.p1.preuAmbIva());
-      console.log(this.p2.descompte());
+      console.log(this.p2.descompte());*/
 
       console.log('Vendes disponibles:', this.getActius());
       console.log('Venda amb id 1:', this.findById(1));

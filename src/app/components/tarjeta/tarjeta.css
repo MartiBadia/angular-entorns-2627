@@ -1,0 +1,19 @@
+/*AQUEST FITXER CONTÉ ELS ESTILS ENCAPSULATS --> NOMES AFECTEN AQUEST COMPONENT*
+.titol --> en aquest COMPONENT 
+.titol (app.css) --> ok, no hi ha conflicte */
+
+.tarjeta{
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 8px;
+        width: 250px;
+        display: inline-block;
+}
+
+h2{
+    color: #1F4E79;
+    font-size: 1.1rem;
+}
+
+/*COM UTILITZO AQUEST COMPONENT?????*/

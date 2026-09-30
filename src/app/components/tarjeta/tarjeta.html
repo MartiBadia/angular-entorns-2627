@@ -1,0 +1,18 @@
+<!-- AQUEST FITXER CONTÉ LA VISTA: ESTRUCTURA HTML, ETC... -->
+<!--<p>tarjeta works!</p>
+<div class="tarjeta">
+    <h2>{{nom}}</h2>
+    <p>Preu: {{preu}}€</p>
+    <p>Estoc: {{estoc}} unitats</p>
+    <p>Preu amb iva (21%): {{preu * 1.21}}€</p>
+    <p>{{estoc >0 ? 'Disponible' : 'No disponible'}}</p>
+    <p>Nom en majuscules: {{nom.toUpperCase()}}</p>
+</div>-->
+<div class="tarjeta">
+    <h2>{{nom}}</h2>
+    <p class="categoria">Preu: {{producte.categoria}}€</p>
+    <p class="preu">Preu: {{producte.preu}}€</p>
+    <p >Estoc: {{producte.estoc}} unitats</p>   
+    <p>{{producte.estoc > 0 ? 'Disponible' : 'No disponible'}}</p>
+
+</div>
