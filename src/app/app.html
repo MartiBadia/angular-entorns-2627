@@ -1,19 +1,26 @@
 <!-- app.html -->
 
 <h2>Benvingut a Angular!</h2>
-<app-tarjeta>
 
-</app-tarjeta>
-<app-perfil>
+@for (producte of productes; track producte.id; let i = $index) {
 
+  @if (producte.categoria === 'informàtica') {
+    <div class="destacat"> Destacat</div>
+  }
 
-  
-</app-perfil>
-<app-perfil></app-perfil>  
-
+  <p>{{ i + 1 }}. {{ producte.nom }} - {{ producte.preu }}€
 
 
-  
+    @if (producte.preu === 0) {
+      <span> - Gratuït</span>
+    } @else if (producte.preu < 20) {
+      <span> - Oferta</span>
+    } @else if (producte.preu > 100) {
+      <span> - Premium</span>
+    }
 
+  </p>
+  <hr>
+}
 
 <router-outlet />

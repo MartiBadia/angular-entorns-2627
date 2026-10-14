@@ -83,6 +83,19 @@ export class App {
     //4. Cerqueu la manera de mostrar el desconmpte amb un pop.
 
 
+
+ /*
+    ciutats: string[] = ['Lleida', 'Barcelona', 'Madrid', 'València', 'Sevilla'];*/
+    productes: Producte[] = [
+  { id: 1, nom: 'Manual PDF', preu: 0, estoc: 100, categoria: 'informàtica' },        // Gratuït (0€) + Destacat
+  { id: 2, nom: 'Cable USB', preu: 15, estoc: 20, categoria: 'informàtica' },         // Oferta (< 20€) + Destacat
+  { id: 3, nom: 'Teclat mecànic', preu: 89.99, estoc: 12, categoria: 'Periferic' },    // Normal
+  { id: 4, nom: 'Pantalla 4K', preu: 249.99, estoc: 5, categoria: 'informàtica' },     // Premium (> 100€) + Destacat
+  { id: 5, nom: 'Auriculars', preu: 18.50, estoc: 15, categoria: 'Periferic' }        // Oferta (< 20€)
+];
+
+
+
     // PART B
     ventes: Venta[] = [
       {
