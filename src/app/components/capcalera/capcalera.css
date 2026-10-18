@@ -1,0 +1,14 @@
+.capcalera {
+  background-color: #1f4e79;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.capcalera h1 {
+  margin: 0;
+}
+
+.capcalera p {
+  margin: 8px 0 0;
+}
