@@ -7,9 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './info.css',
 })
 export class Info {
-  titol = 'Informació de la sessió 6';
+  titol = 'Informació del catàleg';
   versioAngular = 21;
   actiu = true;
 
+  // Per mostrar el títol en majúscules.
+  get titolMajuscules(): string {
+    return this.titol.toUpperCase();
+  }
 
+  // Per mostrar l'estat del component en text.
+  get estat(): string {
+    return this.actiu ? 'Actiu' : 'Inactiu';
+  }
 }

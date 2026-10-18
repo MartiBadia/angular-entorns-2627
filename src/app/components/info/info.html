@@ -1,13 +1,12 @@
 <div class="info-panel">
-    <h3> {{titol}} </h3>
-    <p> Versió d'angular: {{versioAngular}}</p>
+  <h3>{{ titol }}</h3>
+  <p>Versió d'Angular: {{ versioAngular }}</p>
+  <p>{{ titolMajuscules }}</p>
+  <p>Estat: {{ estat }}</p>
 
-    @if(actiu){
-        <span class="estat actiu"> Component actiu </span>
-    } @else {
-        <span class="estat inactiu"> Component inactiu </span>
-    }
-
-    <span style="display:none"> Component actiu </span>
-
+  @if (actiu) {
+    <p>Component actiu</p>
+  } @else {
+    <p>Component inactiu</p>
+  }
 </div>

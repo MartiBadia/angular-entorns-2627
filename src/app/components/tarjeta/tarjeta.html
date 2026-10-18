@@ -1,38 +1,22 @@
-<!--Aquest fitxer conté la vista: estructura HTML i bindings {{}}-->
-
-<!--<div class="tarjeta">
-    <h2> {{nom}} </h2>
-    <p> Preu : {{preu}} €</p>
-    <p> Estoc: {{estoc}} unitats</p>
-    <p> Preu amb iva (21%): {{preu * 1.21}}</p> 
-    <p> {{estoc > 0 ? 'Disponible' : 'Esgotat'}}</p>
-    <p> Nom en majúscules: {{nom.toUpperCase()}}</p>
-</div>-->
-
 <div class="tarjeta">
-    <h2> {{producte.nom}} </h2>
-    <p class="categoria"> {{producte.categoria}} </p>
-    <p class="preu"> {{ producte.preu }} € (+IVA): {{preuAmbIva}} €</p>
-    <p> Estoc: {{producte.estoc }} unitats</p>
-@if (producte.estoc > 0) {
-    <p> {{estatDisponibilitat}}</p>
-}  
+  <img [src]="producte.imatgeUrl" [alt]="producte.nom" />
+
+  <h2>{{ producte.id }}. {{ producte.nom }}</h2>
+  <p>{{ producte.categoria }}</p>
+  <p>Preu: {{ producte.preu }} €</p>
+  <p>Preu amb IVA: {{ producte.preu * 1.21 }} €</p>
+  <p>Estoc: {{ producte.estoc }} unitats</p>
+
+  @if (producte.disponible) {
+    <p>{{ estatDisponibilitat }}</p>
+  } @else {
+    <p>No disponible</p>
+  }
+
+  <p>Puntuació: {{ producte.puntuacio }}/10</p>
+  <p>{{ etiquetaCategoria }}</p>
+  <p>{{ resumProducte }}</p>
+  <p>{{ producte.preu > 100 ? 'Producte premium' : 'Producte econòmic' }}</p>
+
+  <button (click)="seleccionarProducte()">Seleccionar</button>
 </div>
-
-
-<div class="tarjeta">
-    <h2> {{producteXif.nom}} </h2>
-    <p class="categoria"> {{producteXif.categoria}} </p>
-    <p class="preu"> {{ producteXif.preu }} € (+IVA): {{preuAmbIva}} €</p>
-    <p> Estoc: {{producteXif.estoc }} unitats</p>
-
-    <button (click) = "toggleDesc()">
-        {{ mostrarDesc ? 'TANCAR' : 'VEURE' }}
-    </button>
-
-    @if (mostrarDesc) {
-            <p> {{producteXif.descripcio}}</p>
-} 
-</div>
-
-
